@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Identifier:</strong>
+  <%= @actionfolder.identifier %>
+</p>
+
+<p>
+  <strong>Folder:</strong>
+  <%= @actionfolder.folder %>
+</p>
+
+<p>
+  <strong>Lawyer:</strong>
+  <%= @actionfolder.lawyer %>
+</p>
+
+<p>
+  <strong>Low date:</strong>
+  <%= @actionfolder.low_date %>
+</p>
+
+<p>
+  <strong>Closing date:</strong>
+  <%= @actionfolder.closing_date %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @actionfolder.status %>
+</p>
+
+<p>
+  <strong>Action result:</strong>
+  <%= @actionfolder.action_result %>
+</p>
+
+<p>
+  <strong>Uf:</strong>
+  <%= @actionfolder.uf %>
+</p>
+
+<%= link_to 'Edit', edit_actionfolder_path(@actionfolder) %> |
+<%= link_to 'Back', actionfolders_path %>

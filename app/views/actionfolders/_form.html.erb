@@ -1,0 +1,57 @@
+<%= form_with(model: actionfolder, local: true) do |form| %>
+  <% if actionfolder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(actionfolder.errors.count, "error") %> prohibited this actionfolder from being saved:</h2>
+
+      <ul>
+      <% actionfolder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :identifier %>
+    <%= form.number_field :identifier, id: :actionfolder_identifier %>
+  </div>
+
+  <div class="field">
+    <%= form.label :folder %>
+    <%= form.text_field :folder, id: :actionfolder_folder %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lawyer %>
+    <%= form.text_field :lawyer, id: :actionfolder_lawyer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :low_date %>
+    <%= form.date_select :low_date, id: :actionfolder_low_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closing_date %>
+    <%= form.date_select :closing_date, id: :actionfolder_closing_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :actionfolder_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :action_result %>
+    <%= form.text_field :action_result, id: :actionfolder_action_result %>
+  </div>
+
+  <div class="field">
+    <%= form.label :uf %>
+    <%= form.text_field :uf, id: :actionfolder_uf %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

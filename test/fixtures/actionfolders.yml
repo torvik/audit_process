@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identifier: 1
+  folder: MyString
+  lawyer: MyString
+  low_date: 2018-04-20
+  closing_date: 2018-04-20
+  status: MyString
+  action_result: MyString
+  uf: MyString
+
+two:
+  identifier: 1
+  folder: MyString
+  lawyer: MyString
+  low_date: 2018-04-20
+  closing_date: 2018-04-20
+  status: MyString
+  action_result: MyString
+  uf: MyString
