@@ -1,6 +1,6 @@
 class Actionfolder < ApplicationRecord
 
-    #validates :folder , uniqueness: true
+    validates :folder , uniqueness: true
 
 
 end

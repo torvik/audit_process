@@ -12,28 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :identifier %>
+    <%= form.label :id %>
     <%= form.number_field :identifier, id: :actionfolder_identifier %>
   </div>
 
   <div class="field">
-    <%= form.label :folder %>
+    <%= form.label :pasta %>
     <%= form.text_field :folder, id: :actionfolder_folder %>
   </div>
 
   <div class="field">
-    <%= form.label :lawyer %>
+    <%= form.label :advogado %>
     <%= form.text_field :lawyer, id: :actionfolder_lawyer %>
   </div>
 
   <div class="field">
-    <%= form.label :low_date %>
-    <%= form.date_select :low_date, id: :actionfolder_low_date %>
+    <%= form.label :data_baixa %>
+    <%= form.text_field :low_date,class: "datepicker",  id: :actionfolder_low_date %>
   </div>
 
   <div class="field">
-    <%= form.label :closing_date %>
-    <%= form.date_select :closing_date, id: :actionfolder_closing_date %>
+    <%= form.label :data_encerramento %>
+    <%= form.text_field :closing_date, class: "datepicker", id: :actionfolder_closing_date %>
   </div>
 
   <div class="field">
@@ -42,7 +42,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :action_result %>
+    <%= form.label :resultado_da_ação %>
     <%= form.text_field :action_result, id: :actionfolder_action_result %>
   </div>
 
@@ -52,6 +52,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class=>"btn waves-effect waves-light" %>
   </div>
 <% end %>
