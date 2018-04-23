@@ -1,11 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-
-
 <h4>Importar dados do Excel</h4>
 <em>Importante observar a estrutura do Excel. Colunas: <b>id,pasta,advogado,data_baixa,data_encerramento,status,resultado_acao,uf.</b></em>
 <%= form_tag import_from_excel_path, multipart: true do %>
- <%= file_field_tag :file %>
+ <%= file_field_tag :file  %>
  <%= submit_tag "Importar", :class=> "btn"%>
 <% end %>
 <br>

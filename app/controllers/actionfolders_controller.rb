@@ -29,7 +29,7 @@ class ActionfoldersController < ApplicationController
 
     respond_to do |format|
       if @actionfolder.save
-        format.html { redirect_to @actionfolder, notice: 'Actionfolder was successfully created.' }
+        format.html {redirect_to  @actionfolder, :flash => { :success => "Pasta criada com sucesso." }  }
         format.json { render :show, status: :created, location: @actionfolder }
       else
         format.html { render :new }
@@ -43,7 +43,8 @@ class ActionfoldersController < ApplicationController
   def update
     respond_to do |format|
       if @actionfolder.update(actionfolder_params)
-        format.html { redirect_to @actionfolder, notice: 'Actionfolder was successfully updated.' }
+        format.html { redirect_to  @actionfolder, :flash => { :success => "Pasta atulizada com sucesso." } }
+        
         format.json { render :show, status: :ok, location: @actionfolder }
       else
         format.html { render :edit }
@@ -57,7 +58,7 @@ class ActionfoldersController < ApplicationController
   def destroy
     @actionfolder.destroy
     respond_to do |format|
-      format.html { redirect_to actionfolders_url, notice: 'Actionfolder was successfully destroyed.' }
+      format.html { redirect_to actionfolders_url, :flash => { :success => "Pasta apagada com sucesso." } }
       format.json { head :no_content }
     end
   end
@@ -66,7 +67,7 @@ class ActionfoldersController < ApplicationController
     @actionfolders = Actionfolder.all
     @actionfolders.delete_all
     respond_to do |format|
-      format.html { redirect_to actionfolders_url, notice: 'Todas as pastas apagadas com sucesso.' }
+      format.html { redirect_to actionfolders_url, :flash => { :success => "Todas as pastas apagadas com sucesso." } }
       format.json { head :no_content }
     end 
   end
@@ -83,10 +84,10 @@ class ActionfoldersController < ApplicationController
       (2..spreadsheet.last_row).each do |i|
         Actionfolder.create(identifier: spreadsheet.row(i)[0], folder: spreadsheet.row(i)[1], lawyer: spreadsheet.row(i)[2], low_date: spreadsheet.row(i)[3], closing_date: spreadsheet.row(i)[4], status: spreadsheet.row(i)[5], action_result: spreadsheet.row(i)[6], uf: spreadsheet.row(i)[7])
       end
-      flash[:notice] = "Records Imported"
+      flash[:notice] = "Pastas carregadas com sucesso."
       redirect_to actionfolders_path 
     rescue Exception => e
-      flash[:notice] = "Issues with file"
+      flash[:notice] = "Pastas não carregadas."
       redirect_to actionfolders_path 
     end
  end

@@ -1,8 +1,8 @@
 <%= form_with(model: actionfolder, local: true) do |form| %>
-  <% if actionfolder.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(actionfolder.errors.count, "error") %> prohibited this actionfolder from being saved:</h2>
-
+  
+<% if actionfolder.errors.any? %>
+    <div id="error_explanation" class="bit-warning close" data-dismiss="alert">
+      <h4><%= pluralize(actionfolder.errors.count, "error") %> prohibited this actionfolder from being saved:</h4>
       <ul>
       <% actionfolder.errors.full_messages.each do |message| %>
         <li><%= message %></li>
