@@ -62,3 +62,4 @@ gem 'jquery-rails'
 # Sempre inclua
 gem 'materialize-sass'
 gem 'material_icons'
+gem 'will_paginate-materialize'

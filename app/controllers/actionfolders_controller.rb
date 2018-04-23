@@ -4,13 +4,14 @@ class ActionfoldersController < ApplicationController
   # GET /actionfolders
   # GET /actionfolders.json
   def index
-    @actionfolders = Actionfolder.all
+    @actionfolders = Actionfolder.paginate(:page => params[:page], :per_page => 30)
   end
 
   # GET /actionfolders/1
   # GET /actionfolders/1.json
   def show
   end
+
 
   # GET /actionfolders/new
   def new
@@ -60,6 +61,7 @@ class ActionfoldersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   def import_from_excel
     file = params[:file]

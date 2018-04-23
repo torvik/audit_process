@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
 <br><br>
 <h2 class="header center orange-text">Pastas</h2>
 <div class="row center">
@@ -53,7 +52,10 @@
       </tr>
     <% end %>
   </tbody>
+
 </table>
+
+<%= will_paginate @actionfolders %>
 
 <br>
 

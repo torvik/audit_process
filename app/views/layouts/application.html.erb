@@ -6,6 +6,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel = "stylesheet"
+    href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel = "stylesheet"
+    href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type = "text/javascript"
+    src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script> 
+
   </head>
 
   <body>
@@ -14,6 +23,8 @@
     <nav class="light-blue lighten-1" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">AuditProcess</a>
         <ul class="right hide-on-med-and-down">
+            <li><a href="/">Dashboard</a></li>  
+          <li><a href="/actionfolders">Pastas</a></li>  
           <li><a href="/actionfolders/new">Nova Pasta</a></li>
         </ul>
      
@@ -46,27 +57,20 @@
         <div class="row">
           <div class="col l6 s12">
             <h5 class="white-text">Audit Process</h5>
-            <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+            <p class="grey-text text-lighten-4">We are a team...</p>
      
      
           </div>
           <div class="col l3 s12">
             <h5 class="white-text">Settings</h5>
             <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
+              <li><a class="white-text" href="/actionfolders">Lista de Pastas</a></li>
+              <li><a class="white-text" href="/actionfolders/new">Nova Pasta</a></li>
+              <li><a class="white-text" href="/actionfolders">Carregar Pastas</a></li>
             </ul>
           </div>
           <div class="col l3 s12">
-            <h5 class="white-text">Connect</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
+            
           </div>
         </div>
       </div>
