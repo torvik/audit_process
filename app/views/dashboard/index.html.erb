@@ -19,7 +19,7 @@
               <div class="card">
                 <div class="card-content red accent-2 white-text">
                   <p class="card-stats-title">
-                    <i class="material-icons">attach_money</i>Total Encerrado</p>
+                    <i class="material-icons">close</i>Total Encerrado</p>
                   <h4 class="card-stats-number"><%= @totalencerrado %></h4>
                   <p class="card-stats-compare">
                     <i class="material-icons">keyboard_arrow_up</i> 70%
@@ -34,7 +34,7 @@
                 <div class="card">
                   <div class="card-content deep-orange accent-2 white-text">
                     <p class="card-stats-title">
-                      <i class="material-icons">content_copy</i> Total Baixado</p>
+                      <i class="material-icons">file_download</i> Total Baixado</p>
                     <h4 class="card-stats-number"><%= @totalbaixado %></h4>
                     <p class="card-stats-compare">
                       <i class="material-icons">keyboard_arrow_down</i> 3%
@@ -49,8 +49,8 @@
                   <div class="card">
                     <div class="card-content teal accent-4 white-text">
                       <p class="card-stats-title">
-                        <i class="material-icons">trending_up</i> Today Profit</p>
-                      <h4 class="card-stats-number">$806.52</h4>
+                        <i class="material-icons">trending_up</i>Total Pastas GO</p>
+                      <h4 class="card-stats-number"><%= @totalgo %> </h4>
                       <p class="card-stats-compare">
                         <i class="material-icons">keyboard_arrow_up</i> 80%
                         <span class="teal-text text-lighten-5">from yesterday</span>
@@ -59,4 +59,52 @@
             
                   </div>
                 </div>
+      </div>
+
+
+      <div class="row">
+
+
+<table class="highlight" >
+        <thead>
+          <tr>
+            <th>Advogado</th>
+            <th>Total Pastas</th>
+            <th>% de Pastas</th>
+          </tr>
+        </thead>
+      
+        <tbody>
+            <% totaladv = 0 %>
+            <% @advogados.each do |advogado| %>
+            <tr>
+              <td><%= advogado.lawyer %></td>
+              <td><%= totalpastasadv = Actionfolder.where("lawyer LIKE ?", "#{advogado.lawyer}").count %></td>
+              <td><%= percentual = ( (totalpastasadv).round(2) * 100 / (@totalpastas).round(2) ).round(0) %>%</td>
+              <% totaladv = totaladv + 1 %>
+            </tr>
+          <% end %>
+
+          <div class="col s12 m6 l3">
+                <div class="card">
+                  <div class="card-content teal accent-4 white-text">
+                    <p class="card-stats-title">
+                      <i class="material-icons">assignment_ind</i>  Total advogados</p>
+                    <h4 class="card-stats-number"><%= totaladv %> </h4>
+                    <p class="card-stats-compare">
+                      <i class="material-icons">keyboard_arrow_up</i> 80%
+                      <span class="teal-text text-lighten-5">from yesterday</span>
+                    </p>
+                  </div>
+          
+                </div>
+           </div>
+
+
+   
+        </tbody>
+      
+      </table>
+
+
       </div>

@@ -7,6 +7,10 @@ class DashboardController < ApplicationController
     @totalencerrado = Actionfolder.where(status: "Encerrado").count
 
     @totalbaixado = Actionfolder.where(status: "Baixado").count
+
+    @totalgo  = Actionfolder.where(uf: "GO").count
+
+    @advogados = Actionfolder.select(:lawyer).distinct.order("lawyer ASC")
     
   end
 end
