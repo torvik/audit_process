@@ -1,13 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<br><br>
-<h2 class="header center orange-text">Pastas</h2>
-<div class="row center">
-  <h5 class="header col s12 light"></h5>
-</div>
 
 
 <h4>Importar dados do Excel</h4>
+<em>Importante observar a estrutura do Excel. Colunas: <b>id,pasta,advogado,data_baixa,data_encerramento,status,resultado_acao,uf.</b></em>
 <%= form_tag import_from_excel_path, multipart: true do %>
  <%= file_field_tag :file %>
  <%= submit_tag "Importar", :class=> "btn"%>
@@ -15,15 +11,15 @@
 <br>
 <hr>
 
+<%= link_to 'Criar Pasta', new_actionfolder_path, :class=> "btn waves-effect waves-light right "%>
 
-<br>
 
+<br><br>
+<h2 class="header center orange-text">Pastas Importadas</h2>
+<div class="row center">
+  <h5 class="header col s12 light"></h5>
+</div>
 
-<%= link_to 'Criar Pasta', new_actionfolder_path, :class=> "btn waves-effect waves-light right"%>
-
-<br> 
-<br>
-<br>
 
 <table class="highlight" >
   <thead>
@@ -60,3 +56,5 @@
 <br>
 
 
+
+<%= link_to 'Apagar todas as Pastas',  { action: :apagar_todas}, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn waves-effect waves-light red right', id:'delete' %>

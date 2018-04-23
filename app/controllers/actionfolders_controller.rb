@@ -62,6 +62,15 @@ class ActionfoldersController < ApplicationController
     end
   end
 
+  def apagar_todas
+    @actionfolders = Actionfolder.all
+    @actionfolders.delete_all
+    respond_to do |format|
+      format.html { redirect_to actionfolders_url, notice: 'Todas as pastas apagadas com sucesso.' }
+      format.json { head :no_content }
+    end 
+  end
+
 
   def import_from_excel
     file = params[:file]
