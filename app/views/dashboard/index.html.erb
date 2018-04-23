@@ -99,6 +99,7 @@
           
                 </div>
            </div>
+           
 
 
    
@@ -106,5 +107,36 @@
       
       </table>
 
+
+      </div>
+
+      <br>
+      <br>
+
+      <div class="row">
+            <table class="highlight" >
+                    <thead>
+                      <tr>
+                        <th>UF</th>
+                        <th>Total Pastas</th>
+                        <th>% de Pastas</th>
+                      </tr>
+                    </thead>
+                  
+                    <tbody>
+                        <% totaluf = 0 %>
+                        <% @uf.each do |uf| %>
+                        <tr>
+                          <td><%= uf.uf %></td>
+                          <td><%= totalpastasuf = Actionfolder.where("uf LIKE ?", "#{uf.uf}").count %></td>
+                          <td><%= percentual = ( (totalpastasuf).round(2) * 100 / (@totalpastas).round(2) ).round(0) %>%</td>
+                          <% totaluf = totaluf + 1 %>
+                        </tr>
+                      <% end %>
+                        
+               
+                    </tbody>
+                  
+                  </table>
 
       </div>

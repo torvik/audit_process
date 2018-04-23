@@ -11,6 +11,9 @@ class DashboardController < ApplicationController
     @totalgo  = Actionfolder.where(uf: "GO").count
 
     @advogados = Actionfolder.select(:lawyer).distinct.order("lawyer ASC")
+
+    @uf = Actionfolder.select(:uf).distinct.order("uf ASC")
+    
     
   end
 end
