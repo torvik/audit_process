@@ -23,9 +23,16 @@
     <nav class="light-blue lighten-1" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">AuditProcess</a>
         <ul class="right hide-on-med-and-down">
+            <% if current_user %>
             <li><a href="/">Dashboard</a></li>  
-          <li><a href="/actionfolders">Pastas</a></li>  
-          <li><a href="/actionfolders/new">Nova Pasta</a></li>
+            <li><a href="/actionfolders">Pastas</a></li>  
+            <li><a href="/actionfolders/new">Nova Pasta</a></li>
+            <li><a href="/users/edit">Editar Perfil</a></li>
+            <li>  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+            <% else %>
+            <li><a href="/users/sign_in">Login</a></li>
+            <li><a href="/users/sign_up">Sign Up</a></li>
+            <% end %>
         </ul>
      
         <ul id="nav-mobile" class="side-nav">
